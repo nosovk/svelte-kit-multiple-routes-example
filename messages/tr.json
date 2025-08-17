@@ -1,13 +1,13 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "demo": {
-    "name": "prefix:demo, lang:en key:name"
+    "name": "prefix:demo, lang:tr key:name"
   },
   "land_a": {
-    "name": "prefix:land_a, lang:en key:name"
+    "name": "prefix:land_a, lang:tr key:name"
   },
   "land_b": {
-    "name": "prefix:land_b, lang:en key:name"
+    "name": "prefix:land_b, lang:tr key:name"
   },
   "unsued": "@debug_unsued"
 }
