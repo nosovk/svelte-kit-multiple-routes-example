@@ -1,38 +1,40 @@
-# sv
+# multiple routes example
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Illustration to https://github.com/sveltejs/kit/discussions/14240
 
-## Creating a project
+## how to use
 
-If you're seeing this, you've probably already done this step. Congrats!
+inside env use those variables:
 
-```sh
-# create a new project in the current directory
-npx sv create
+```
+VITE_TYPE=pages
+#VITE_TYPE=static
 
-# create a new project in my-app
-npx sv create my-app
+VITE_ROUTE_SUFFIX=1
+#VITE_ROUTE_SUFFIX=2
+#VITE_ROUTE_SUFFIX=3
+#VITE_ROUTE_BASEPATH=
 ```
 
-## Developing
+where:
+VITE_TYPE defines which adapter to use
+VITE_ROUTE_SUFFIX defines the suffix of the route
+VITE_ROUTE_BASEPATH defines the basepath of the route
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### examples
+VITE_TYPE=pages
+VITE_ROUTE_SUFFIX=1
 
-```sh
-npm run dev
+will lead to use of routes-pages-1 as entrypoint, and will be prepared for cloudflare pages deployment
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
 
-## Building
 
-To create a production version of your app:
 
-```sh
-npm run build
-```
 
-You can preview the production build with `npm run preview`.
+VITE_TYPE=static
+VITE_ROUTE_SUFFIX=2
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+will lead to use of routes-static-2 as entrypoint, and will be prepared for static files deployment
+
+
+VITE_ROUTE_BASEPATH could be used to define a basepath for the routes, e.g. publishing lands to subroute
